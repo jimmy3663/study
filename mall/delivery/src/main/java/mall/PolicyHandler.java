@@ -21,8 +21,13 @@ public class PolicyHandler{
 
         // Sample Logic //
         Delivery delivery = new Delivery();
+        delivery.setOrderId(orderPlaced.getId());
+        delivery.setProductId(orderPlaced.getProductId());
+        delivery.setProductName(orderPlaced.getProductName());
+        delivery.setDeliveryStatus("start");
         deliveryRepository.save(delivery);
-            
+
+
     }
 
 

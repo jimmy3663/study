@@ -20,14 +20,14 @@ public class PolicyHandler{
         System.out.println("\n\n##### listener UpdateStatus : " + deliveryStarted.toJson() + "\n\n");
 
         // Sample Logic //
-        Order order = new Order();
+        Order order = orderRepository.findById(deliveryStarted.getOrderId()).get();
+        order.setDeliveryStatus(deliveryStarted.getDeliveryStatus());
+        order.setDeliveryId(deliveryStarted.getId());
         orderRepository.save(order);
-            
+        
     }
-
-
+    
     @StreamListener(KafkaProcessor.INPUT)
     public void whatever(@Payload String eventString){}
-
-
+    
 }

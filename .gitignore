@@ -1,0 +1,4 @@
+/mall/*/target/*.class
+*.log.*
+/kafka_2.13-2.5.1/logs/*
+.iml
