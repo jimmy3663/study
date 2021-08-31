@@ -1,5 +1,7 @@
 package mall;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class OrderCancelled extends AbstractEvent {
 
     private Long id;

@@ -45,7 +45,9 @@ public class AbstractEvent {
              */
             KafkaProcessor processor = OrderApplication.applicationContext.getBean(KafkaProcessor.class);
             MessageChannel outputChannel = processor.outboundTopic();
-
+            System.out.println("JSON HERE ===============================================");
+            System.out.println(json);
+            System.out.println("JSON END ================================================");
             outputChannel.send(MessageBuilder
                     .withPayload(json)
                     .setHeader(MessageHeaders.CONTENT_TYPE, MimeTypeUtils.APPLICATION_JSON)

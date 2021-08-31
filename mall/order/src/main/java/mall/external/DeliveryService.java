@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.Date;
 
-@FeignClient(name="delivery", url="http://delivery:8080")
+@FeignClient(name="delivery", url="http://localhost:8082")
 public interface DeliveryService {
 
-    @RequestMapping(method= RequestMethod.GET, path="/deliveries")
+    @RequestMapping(method= RequestMethod.GET, path="/cancelDelivery")
     public void cancelDelivery(@RequestBody Delivery delivery);
 
 }
